@@ -13,7 +13,8 @@ const getUsers = async (req, res) =>{
     res.status(200).json(response.rows);
 }
 const createUser = async(req, res) =>{
-
+    console.log(req.body);
+    res.send('user created');
 };
 
 module.exports ={
