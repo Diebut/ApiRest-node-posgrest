@@ -31,6 +31,12 @@ const createUser = async(req, res) =>{
         }
     });
 };
+const updateUser = async(req, res) =>{
+    const id = req.params.id;
+    const {name, email} = req.body;
+    console.log(id, name, email);
+    res.json('User update');
+}
 
 const deleteUser = async(req, res) =>{
  //res.send('Usuario delete ' + req.params.id);
@@ -44,5 +50,6 @@ module.exports ={
     getUsers,
     getUserById,
     createUser,
+    updateUser,
     deleteUser
 }
