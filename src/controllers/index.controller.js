@@ -14,7 +14,7 @@ const getUsers = async (req, res) =>{
 }
 
 const getUserById = async (req, res) =>{
-    res.send('User ID')
+    res.send('User ID ' + req.params.id)
 }
 const createUser = async(req, res) =>{
     const { name, email } = req.body;
