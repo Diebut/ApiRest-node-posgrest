@@ -14,7 +14,9 @@ const getUsers = async (req, res) =>{
 }
 
 const getUserById = async (req, res) =>{
-    res.send('User ID ' + req.params.id)
+    const id = req.params.id;
+    const response = await pool.query('select * from  users where id = $1', [id]);
+    res.json(response.rows);
 }
 const createUser = async(req, res) =>{
     const { name, email } = req.body;
