@@ -32,8 +32,12 @@ const createUser = async(req, res) =>{
     });
 };
 
+const deleteUser = async(req, res) =>{
+ res.send('Usuario delete ' + req.params.id);
+}
 module.exports ={
     getUsers,
     getUserById,
-    createUser
+    createUser,
+    deleteUser
 }
