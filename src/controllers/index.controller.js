@@ -33,7 +33,12 @@ const createUser = async(req, res) =>{
 };
 
 const deleteUser = async(req, res) =>{
- res.send('Usuario delete ' + req.params.id);
+ //res.send('Usuario delete ' + req.params.id);
+    const id = req.params.id;
+    const response = await pool.query('delete from users where id = $1', [id]);
+    console.log(response);
+    res.json(`User ${id} deleted satisfactoriamente`);
+
 }
 module.exports ={
     getUsers,
