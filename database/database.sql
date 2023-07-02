@@ -5,3 +5,5 @@ CREATE Table users(
     name varchar (40),
     email TEXT
 );
+
+INSERT INTO users(name, email) VALUES ('diego', 'diegol@gmail.com'),('ryan', 'kakaroto@hotmail.com');
