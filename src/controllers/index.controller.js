@@ -12,6 +12,10 @@ const getUsers = async (req, res) =>{
     const response = await pool.query('select * from users');
     res.status(200).json(response.rows);
 }
+
+const getUserById = async (req, res) =>{
+    res.send('User ID')
+}
 const createUser = async(req, res) =>{
     const { name, email } = req.body;
 
@@ -28,5 +32,6 @@ const createUser = async(req, res) =>{
 
 module.exports ={
     getUsers,
+    getUserById,
     createUser
 }
