@@ -3,15 +3,14 @@ const { Pool } = require('pg');
 const pool = new Pool({
     host: 'localhost',
     user: 'postgres',
-    password: '',
-    database: 'Nodejs_PG',
+    password: 'zxc123',
+    database: 'nodejs_pg',
     port: '5432'
 });
 
 const getUsers = async (req, res) =>{
     const response = await pool.query('select * from users');
-    console.log(response.rows);
-    res.send('users');
+    res.status(200).json(response.rows);
 }
 
 module.exports ={
