@@ -12,7 +12,11 @@ const getUsers = async (req, res) =>{
     const response = await pool.query('select * from users');
     res.status(200).json(response.rows);
 }
+const createUser = async(req, res) =>{
+
+};
 
 module.exports ={
-    getUsers
+    getUsers,
+    createUser
 }
