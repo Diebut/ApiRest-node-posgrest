@@ -1,3 +1,4 @@
+const e = require('express');
 const { Pool } = require('pg');
 
 const pool = new Pool({
@@ -34,8 +35,9 @@ const createUser = async(req, res) =>{
 const updateUser = async(req, res) =>{
     const id = req.params.id;
     const {name, email} = req.body;
-    console.log(id, name, email);
-    res.json('User update');
+    const response = await pool.query('update users set name = $1, email = $2 where id =$3', [name, email, id]);
+    console.log(response);
+    res.json('User update satisfactoriamente');
 }
 
 const deleteUser = async(req, res) =>{
