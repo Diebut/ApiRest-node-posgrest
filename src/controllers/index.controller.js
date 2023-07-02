@@ -8,7 +8,9 @@ const pool = new Pool({
     port: '5432'
 });
 
-const getUsers = (req, res) =>{
+const getUsers = async (req, res) =>{
+    const response = await pool.query('select * from users');
+    console.log(response.rows);
     res.send('users');
 }
 
