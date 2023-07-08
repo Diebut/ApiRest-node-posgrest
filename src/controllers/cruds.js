@@ -9,6 +9,14 @@ const pool = new Pool({
     port: '5432'
 });
 
+pool.connect((error)=>{ // mensajitos de conexion
+    if (error) {
+        console.log('El error de conexion es: '+ error);
+        return
+    }
+    console.log('¡Conectado a la Base de Datos PG Admin!');
+})
+
 const getUsers = async (req, res) =>{
     const response = await pool.query('select * from public."Usuarios"');
     res.status(200).json(response.rows);
