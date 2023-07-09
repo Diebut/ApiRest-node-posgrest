@@ -56,6 +56,7 @@ const deleteUser = async(req, res) =>{
     res.json(`User ${id} deleted satisfactoriamente`);
 
 }
+
 module.exports ={
     getUsers,
     getUserById,

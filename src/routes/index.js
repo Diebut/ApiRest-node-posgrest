@@ -3,10 +3,12 @@ const router = Router();
 
 const { getUsers, createUser, getUserById, deleteUser, updateUser } = require('../controllers/cruds');
 
-router.get('/usuarios/', getUsers);
-router.get('/usuarios/:id', getUserById);
-router.post('/usuarios/', createUser);
-router.delete('/usuarios/:id', deleteUser);
-router.put('/usuarios/:id', updateUser);
+router.get('/users/', getUsers);
+router.get('/users/:id', getUserById);
+router.post('/users/', createUser);
+router.delete('/users/:id', deleteUser);
+router.put('/users/:id', updateUser);
+
+
 
 module.exports = router;
