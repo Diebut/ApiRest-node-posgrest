@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const fetch = require('fetch');
+
 const port = process.env.PORT || 4000; //se agrego
 
 //middlewares
