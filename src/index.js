@@ -43,7 +43,7 @@ app.get("/users", async (req, res) => {
     const { nombre, correo } = req.body;
   
     try {
-      const client = await pool.connect();
+      const client= await pool.connect();
       const result = await client.query('insert into public."Usuarios" (nombre, correo) values ($1, $2)', [nombre, correo]);
       client.release();
       res.sendStatus(201);
