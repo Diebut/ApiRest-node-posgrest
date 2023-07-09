@@ -3,8 +3,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 //const fetch = require('fetch');
+require('dotenv').config({path:'./.env'});
 
-const port = process.env.PORT || 4000; //se agrego
+const port = process.env.PORT; //se agrego
 
 //middlewares
 //app.use(express.json());// se encarga de una app cliente envie el formato json
@@ -85,6 +86,11 @@ app.get("/users", async (req, res) => {
   });
 
 
+// app.listen(port, ()=> //se agrego
+//     console.log(`Dieguito index.js listeng at http://localhost:${port}`)
+// );
+
+
 app.listen(port, ()=> //se agrego
-    console.log(`Dieguito index.js listeng at http://localhost:${port}`)
+    console.log('Dieguito el server corre ' + port)
 );
